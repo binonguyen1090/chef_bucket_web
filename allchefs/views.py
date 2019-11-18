@@ -14,5 +14,6 @@ def about(request):
     
 def aboutchef(request, chef_id):
     chef_id = Chef.objects.get(pk=chef_id)
+    allchefs = Chef.objects.all
     return render (request, 'allchefs/aboutchef.html', {'chef_id': chef_id})
     
