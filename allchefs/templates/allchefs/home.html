@@ -8,62 +8,12 @@ Home
 
 <!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-</head>
-
 <body>
-    <header>
-        <div class="collapse bg-dark" id="navbarHeader">
-            <div class="container">
-                <div class="row">
-
-
-                </div>
-            </div>
-        </div>
-
-    </header>
-
-    <main role="main">
-
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">Welcome To The Top Chefs OF The World</h1>
-                <p class="lead text-muted">Something short and leading about the collection below—its contents, the
-                    creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
-                    entirely.</p>
+    <main role="main ">
+        <section class=" text-center p-3 mb-2 bg-secondary text-white">
+            <div class="container ">
+                <h1 class="jumbotron-heading text-center p-3 mb-2 bg-secondary text-white">Welcome To The Top Chefs OF The World</h1>
+                <h3 class="text-light ">Pick your favorite chef and cook with them </h3>
                 <p>
                     <a href="#" class="btn btn-primary my-2">Main call to action</a>
                     <a href="#" class="btn btn-secondary my-2">Secondary action</a>
@@ -71,28 +21,23 @@ Home
             </div>
         </section>
 
-        <div class="album py-5 bg-light">
+        <div class="album py-5 p-3 mb-2 bg-danger text-white">
             <div class="container">
-
                 <div class="row">
                     {% if allchefs %}
                     {% for things in allchefs %}
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="{{ things.image.url }}" />
-                            <div class="card-body">
-                                <p class="card-text">{{ things.name}}</p>
-                            </div>
+                            <img class="card-img-top rounded-lg border border-primary .img-thumbnail"
+                                src="{{ things.image.url }}" alt="">
+                            
                         </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'aboutchef' things.id %}">View</a></button>
                     </div>
-                
-                {% endfor%}
-                {% endif%}
+                    {% endfor%}
+                    {% endif%}
+                </div>
             </div>
-
-        </div>
-        
-
     </main>
 
     <footer class="text-muted">
