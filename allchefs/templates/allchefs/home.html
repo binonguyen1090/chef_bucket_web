@@ -1,5 +1,5 @@
 {% extends 'allchefs/base.html' %}
-
+{% load static%}
 {% block title %}
     Home 
 {% endblock%}
@@ -9,8 +9,16 @@
         {% for things in allchefs %}
             {{things.name}}
             {{things.body}}
-            <img src="{{ things.chef_bucket.media.media.image }}">
+    
             <br>
         {% endfor %}
     {% endif %}
+
+
+<footer class="text-muted">
+    <div class="container text-center">
+        <p>©️ Bino Nguyen {% now "Y%}</p>
+    </div>
+</footer>
+
 {% endblock%}
