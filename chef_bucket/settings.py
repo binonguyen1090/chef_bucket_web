@@ -125,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/medias/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'chef_bucket/media')
+MEDIA_ROOT = os.path.join(BASE_DIR,'medias')
 

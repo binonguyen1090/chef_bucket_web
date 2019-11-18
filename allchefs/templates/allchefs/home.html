@@ -5,5 +5,12 @@
 {% endblock%}
 
 {% block content %}
-    <p>HOME</p>
+    {% if allchefs %}
+        {% for things in allchefs %}
+            {{things.name}}
+            {{things.body}}
+            <img src="{{ things.chef_bucket.media.media.image }}">
+            <br>
+        {% endfor %}
+    {% endif %}
 {% endblock%}
