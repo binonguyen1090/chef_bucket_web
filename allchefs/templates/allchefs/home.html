@@ -9,6 +9,7 @@
         {% for things in allchefs %}
             {{things.name}}
             {{things.body}}
+            <img src="{{ things.image.url}}" >
     
             <br>
         {% endfor %}
