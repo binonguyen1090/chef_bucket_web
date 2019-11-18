@@ -125,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/medias/'
+MEDIA_URL = '/medias/' #urls / front of upload_to= in model exm: coolstuff/media
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'medias')
 
