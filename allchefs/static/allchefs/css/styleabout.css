@@ -353,3 +353,21 @@ section:last-child {
 	-moz-animation-delay: 0, 0.5s;
 	animation-delay: 0, 0.5s;
 }
+
+
+
+ul.a
+{
+list-style-type: none;
+padding: 0;
+margin: 0;
+text-align: right;
+}
+
+li.a
+{
+background-image: url(arrow.gif);
+background-repeat: no-repeat;
+background-position: 100% .4em;
+padding-right: .10em;
+}
