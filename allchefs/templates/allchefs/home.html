@@ -8,48 +8,39 @@ Home
 
 <!doctype html>
 <html lang="en">
+
 <body>
+
     <main role="main ">
         <section class=" text-center p-3 mb-2 bg-secondary text-white">
             <div class="container ">
-                <h1 class="jumbotron-heading text-center p-3 mb-2 bg-secondary text-white">Welcome To The Top Chefs OF The World</h1>
-                <h3 class="text-light ">Pick your favorite chef and cook with them </h3>
-                <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                </p>
+                <h1 class="jumbotron-heading text-center p-3 mb-2 bg-secondary text-white">Welcome To The Top Chefs OF
+                    The World</h1>
+                <h3 class="text-light ">Pick your favorite chef</h3>
+                <br>
             </div>
-        </section>
 
 
-        <div class="album py-5 p-3 mb-2 bg-danger text-white">
-            <div class="container">
-                <div class="row">
-                    {% if allchefs %}
-                    {% for things in allchefs %}
-                    <div class="col-md-3">
-                        <div class="card mb-4 box-shadow">
-                            <a href="{% url 'aboutchef' things.id %}">
-                                <img class="card-img-top rounded-lg border border-primary .img-thumbnail"
-                                src="{{ things.image.url }}" alt="">
-                            </a>
+
+            <div class="album py-3 p-5 mb-5 bg-danger text-white border rounded">
+                <div class="container">
+                    <div class="row">
+                        {% if allchefs %}
+                        {% for things in allchefs %}
+                        <div class="col-md-3">
+                            <div class="card mb-4 box-shadow">
+                                <a href="{% url 'aboutchef' things.id %}"><img
+                                        class="card-img-top rounded-lg border border-primary .img-thumbnail"
+                                        src="{{ things.image.url }}" alt=""></a>
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'aboutchef' things.id %}">View</a></button>
+                        {% endfor%}
+                        {% endif%}
                     </div>
-                    {% endfor%}
-                    {% endif%}
                 </div>
             </div>
+        </section>
     </main>
-
-    <footer class="text-muted">
-        <div class="container">
-            <p class="float-right">
-                <a href="#">Back to top</a>
-            </p>
-
-        </div>
-    </footer>
 </body>
 
 </html>

@@ -1,6 +1,90 @@
+{% extends 'allchefs/base.html' %}
+{% block content %}
+
+<main role="main ">
+    <section class=" text-center p-3 mb-2 bg-secondary text-white">
+        <div class="container ">
+            <h1 class="jumbotron-heading text-center p-3 mb-2 bg-secondary text-white">{{chef_id.name}}</h1>
+
+        </div>
 
 
-{{chef_id.body}}
-{{chef_id.name}}
-<img class="card-img-top rounded-lg border border-primary .img-thumbnail"
+
+        <div class="album py-3 p-5 mb-5 bg-danger text-white border rounded">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="card-body ">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top rounded-lg border border-primary .img-thumbnail "
+                                    src="{{chef_id.image.url}}" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="card-body">
+
+                            <p class="card-text">
+                                <h4>
+                                    {{chef_id.body}}
+                                </h4>
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn btn-primary my-2">Watch Now</a>
+        <a href="{% url 'home' %}" class="btn btn-primary my-2">Go Back</a>
+
+    </section>
+
+</main>
+
+
+
+
+{% endblock %}
+
+
+<!-- <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+            <img class="card-img-top rounded-lg border border-primary .img-thumbnail"
+                src="{{chef_id.image.url}}" alt="">
+        </div>
+    </div> -->
+<!-- 
+    <div class="card-footer">
+            <a href="#" class="btn btn-primary my-2">Watch Now</a>
+            <a href="{% url 'home' %}" class="btn btn-primary my-2">Go Back</a>
+        </div> -->
+
+<!-- 
+        <div class="row">
+                <div class="col-sm-6">
+
+                    <div class="card-body ">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top rounded-lg border border-primary .img-thumbnail "
                                 src="{{chef_id.image.url}}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="card-body">
+
+                        <p class="card-text">{{chef_id.body}}
+                        </p>
+
+                    </div>
+
+                </div>
+            </div> -->
