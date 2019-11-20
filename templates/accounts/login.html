@@ -1,19 +1,39 @@
 {% extends 'allchefs/base.html' %}
 
 {% block content%}
+{%if error %}
+    {{error}}
+{% endif %}
 <main role="main ">
-        <section class=" text-center p-3 mb-2 bg-secondary text-white">
-            <div class="container ">
-                <h1 class="jumbotron-heading text-center p-3 mb-2 bg-secondary text-white"></h1>
-                asd
+    <section class=" text-center p-3 mb-2 bg-secondary text-white">
+        <div class="container ">
+            <h1 class="jumbotron-heading text-center p-3 mb-2 bg-secondary text-white"></h1>
+
+        </div>
+
+
+
+        <div class="album py-3 p-5 mb-5 bg-danger text-white border rounded">
+            <div class="container">
+                
+                    <h1>Sign In</h1><br>
+                    <form method="POST" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        Username: <br>
+                        <input type="text" name="username" /><br>
+                        Password: <br>
+                        <input type="password" name="password" /><br>
+                        
+                    <br><br><br>
+                    <input class="btn btn-primary" type="submit" value="Sign In"><br><br><br><br>
+                    </form>
             </div>
-            <div class="album py-3 p-5 mb-5 bg-danger text-white border rounded">
-                <div class="container">
-                    <div class="row">
-                        <p>Log In</p><br><br><br><br><br><br><br>
-                    </div>
-                </div>
-            </div>
+            <!-- footer break -->
+            <br><br><br><br><br><br><br>
+        </div>
+        
     </section>
+    
 </main>
+
 {% endblock %}
