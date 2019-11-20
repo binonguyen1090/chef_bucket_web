@@ -2,7 +2,7 @@
 
 {% block content%}
 {%if error %}
-    {{error}}
+{{error}}
 {% endif %}
 <main role="main ">
     <section class=" text-center p-3 mb-2 bg-secondary text-white">
@@ -11,31 +11,52 @@
 
         </div>
 
+        
+        <div class="container bg-danger  py-5 mb-5  border rounded">
 
-
-        <div class="album py-3 p-5 mb-5 bg-danger text-white border rounded">
             <div class="container">
-                
-                    <h1>Sign Up</h1><br>
-                    <form method="POST" action="{% url 'signup' %}">
-                        {% csrf_token %}
-                        Username: <br>
-                        <input type="text" name="username" /><br>
-                        Password: <br>
-                        <input type="password" name="password1" /><br>
-                        Confirm Passowrd: <br>
-                        <input type="password" name="password2" /><br>
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="card rounded shadow shadow-sm">
+                        <div class="card-header">
+                            <h3 class="mb-0 text-dark">Sign Up</h3>
+                        </div>
+
+                        <form method="POST" action="{% url 'signup' %}"><br>
+
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <h5 class="mb-0 text-secondary">Username</h5><br>
+                                <input type="text" class="form-control-lg rounded-5" name="username">
+                            </div>
+                            <div class="form-group">
+                                <h5 class="mb-0 text-secondary">Password</h5><br>
+                                <input type="password" class="form-control-lg rounded-5" name="password1">
+                            </div>
+
+                            <div class="form-group">
+                                <h5 class="mb-0 text-secondary">Confirm Passowrd</h5><br>
+                                <input type="password" class="form-control-lg rounded-5" name="password2">
+                            </div>
+
+
+
+                            
+                            <input class="btn btn-primary" type="submit" value="Sign Up"><br><br>
+                        </form>
                         
-                    <br><br><br>
-                    <input class="btn btn-primary" type="submit" value="Sign Up"><br><br><br><br>
-                    </form>
+                    </div>
+                    <br>
+                    <h5>Already have an account?</h5><br>
+                    
+                    <a class="btn btn-primary" href="{% url 'login' %}" role="button">Sign in</a>
+                </div>
             </div>
             <!-- footer break -->
-            <br><br><br><br><br><br><br>
+
         </div>
-        
+
     </section>
-    
+
 </main>
 <!-- <h1>Sign Up</h1>
 <form method="POST" action="{% url 'signup' %}">
