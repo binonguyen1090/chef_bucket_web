@@ -1,6 +1,9 @@
 {% extends 'allchefs/base.html' %}
 
 {% block content%}
+{%if error %}
+    {{error}}
+{% endif %}
 <main role="main ">
     <section class=" text-center p-3 mb-2 bg-secondary text-white">
         <div class="container ">
@@ -23,9 +26,9 @@
                         Confirm Passowrd: <br>
                         <input type="password" name="password2" /><br>
                         
-                    </form><br><br><br>
+                    <br><br><br>
                     <input class="btn btn-primary" type="submit" value="Sign Up"><br><br><br><br>
-                
+                    </form>
             </div>
             <!-- footer break -->
             <br><br><br><br><br><br><br>
