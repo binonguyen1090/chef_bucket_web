@@ -1,16 +1,17 @@
 {% extends 'allchefs/base.html' %}
 
 {% block content%}
-{%if error %}
-{{error}}
-{% endif %}
+
 <main role="main ">
     <section class=" text-center p-3 mb-2 bg-secondary text-white">
         <div class="container ">
+                {%if error %}
+                <button type="button" class="btn btn-outline-warning"> {{error}}</button>
+                {% endif %}
             <h1 class="jumbotron-heading text-center p-3 mb-2 bg-secondary text-white"></h1>
 
         </div>
-
+        
         
         <div class="container bg-danger  py-5 mb-5  border rounded">
 

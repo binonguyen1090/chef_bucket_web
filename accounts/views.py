@@ -6,7 +6,15 @@ from django.contrib import auth
 # Create your views here.
 def signup(request):
     if request.method == "POST" :
-        if request.POST['password1'] == request.POST['password2']:
+        user = request.POST['username']
+        pass1 = request.POST['password1']
+        pass2 = request.POST['password2']
+        if not user:
+            return render(request, 'accounts/signup.html',{'error': 'Username can not be blank'})
+        if not pass1 and not pass2:
+            return render(request, 'accounts/signup.html',{'error': 'Password can not be blank'})
+
+        if request.POST['password1'] == request.POST['password2']: 
             try:
                 user = User.objects.get(username=request.POST['username'])
                 return render(request, 'accounts/signup.html', {'error': 'User already has been taken'})
@@ -15,7 +23,7 @@ def signup(request):
                 auth.login(request,user)
                 return redirect('home')
         else:
-            return render(request, 'accounts/signup.html',{'error': 'Passowrd miss match'})
+            return render(request, 'accounts/signup.html',{'error': 'Password missed match'})
     else:
         return render(request, 'accounts/signup.html')
 
