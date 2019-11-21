@@ -17,4 +17,16 @@ def aboutchef(request, chef_id):
     chef_id = Chef.objects.get(pk=chef_id)
     allchefs = Chef.objects.all
     return render (request, 'allchefs/aboutchef.html', {'chef_id': chef_id})
-    
+
+def search(request):
+    q = request.GET['q']
+    if not q:
+        return redirect('home')
+    else:
+        allchefs = Chef.objects.filter(name__icontains=q)
+        if not allchefs:
+            return render (request, 'allchefs/result.html', {'error': 'No chef matched in the record. Please type in again'} )
+        else:
+            return render (request, 'allchefs/result.html', {'q': q,'allchefs': allchefs} )
+
+     

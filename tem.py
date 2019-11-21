@@ -16,7 +16,7 @@ Home
         <section class=" text-center p-5 mb-3 bg-secondary text-white">
             <div class="container ">
 
-               
+
                 <section id="cover">
                     <div id="cover-caption">
                         <div class="container">
@@ -24,12 +24,12 @@ Home
                                 <div class="col-xl-5 col-lg-6 col-md-6 col-sm-2 mx-auto text-center form p-2">
 
                                     <div class="px-2">
-                                        <form action="{% url 'search' %}"  class="justify-content-center">
+                                        <form action="" class="justify-content-center">
 
-                                            <div class="form-group" >
-                                            
+                                            <div class="form-group">
+                                                <label class="sr-only">Email</label>
                                                 <input class="form-control mr-sm-2" type="search" placeholder="Search"
-                                                    aria-label="Search" name='q'>
+                                                    aria-label="Search">
                                             </div>
 
                                             <button class="btn btn-outline-warning my-2 my-sm-0"
@@ -80,9 +80,3 @@ Home
 </body>
 
 </html>
-
-
-
-
-
-{% endblock%}
