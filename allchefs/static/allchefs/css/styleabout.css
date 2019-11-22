@@ -15,11 +15,14 @@ html, body {background: #d2d2d2; font-family: 'Lato', helvetica, arial, sans-ser
 
 .clear {clear: both;}
 
+
 p {
 	font-size: 1em;
 	line-height: 1.4em;
 	margin-bottom: 20px;
 	color: #444;
+	margin: 0 auto;
+	text-align: center;
 }
 
 #cv {

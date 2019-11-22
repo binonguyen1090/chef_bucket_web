@@ -25,7 +25,7 @@ def search(request):
     else:
         allchefs = Chef.objects.filter(name__icontains=q)
         if not allchefs:
-            return render (request, 'allchefs/result.html', {'error': 'No chef matched in the record. Please type in again'} )
+            return render (request, 'allchefs/result.html', {'error': 'No search results'} )
         else:
             return render (request, 'allchefs/result.html', {'q': q,'allchefs': allchefs} )
 

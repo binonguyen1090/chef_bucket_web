@@ -16,7 +16,7 @@ Home
         <section class=" text-center p-5 mb-3 bg-secondary text-white">
             <div class="container ">
 
-               
+
                 <section id="cover">
                     <div id="cover-caption">
                         <div class="container">
@@ -24,10 +24,10 @@ Home
                                 <div class="col-xl-5 col-lg-6 col-md-6 col-sm-2 mx-auto text-center form p-2">
 
                                     <div class="px-2">
-                                        <form action="{% url 'search' %}"  class="justify-content-center">
+                                        <form action="{% url 'search' %}" class="justify-content-center">
 
-                                            <div class="form-group" >
-                                            
+                                            <div class="form-group">
+
                                                 <input class="form-control mr-sm-2" type="search" placeholder="Search"
                                                     aria-label="Search" name='q'>
                                             </div>
@@ -62,14 +62,75 @@ Home
                 <div class="container">
                     <div class="row">
                         {% if allchefs %}
-                        {% for things in allchefs %}
+                        {% for chef in allchefs %}
+                        <!-- Button trigger modal -->
                         <div class="col-md-3">
                             <div class="card mb-4 box-shadow">
-                                <a href="{% url 'aboutchef' things.id %}"><img
-                                        class="card-img-top rounded-lg border border-primary .img-thumbnail"
-                                        src="{{ things.image.url }}" alt=""></a>
+                                <img data-toggle="modal" data-target="#a{{chef.id}}"
+                                    class="card-img-top rounded-lg border border-primary .img-thumbnail"
+                                    src="{{ chef.image.url }}" alt="">
                             </div>
                         </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="a{{chef.id}}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header mx-auto">
+                                        <h4>
+                                            <p class="text-secondary text-center">{{chef.name}}</p>
+                                        </h4>
+
+                                    </div>
+                                    <br>
+
+
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+
+                                                    <div class="card-body ">
+                                                        <div class="card mb-4 box-shadow">
+                                                            <img class="card-img-top rounded-lg border border-primary .img-thumbnail "
+                                                                src="{{chef.image.url}}" alt="">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-8">
+
+                                                    <div class="card-body">
+
+                                                        <p class="card-text">
+                                                            <h4>
+                                                                <p class="text-secondary text-center">{{chef.body}}</p>
+                                                            </h4>
+                                                        </p>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Watch</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
                         {% endfor%}
                         {% endif%}
                     </div>
